@@ -1,0 +1,13 @@
+@import '../app.component.scss';
+
+nav {
+    padding: 1em;
+    background-color: $color-secundario;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search{
+    display: flex;
+    gap: 1em;
+}

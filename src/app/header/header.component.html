@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-sm-11 zonalogo">    
+        <a routerLink="main">
+            <img [src]="logo" alt="guiltybit.com">
+        </a>
+    </div>
+    
+    <div class="col-sm-1 idioma">    
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownIdioma" data-bs-toggle="dropdown" aria-expanded="false">
+                {{idioma}}
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownIdioma">                
+                <li *ngFor="let idioma of idiomas"><a class="dropdown-item" (click)="cambiarIdioma(idioma)">{{idioma}}</a></li>
+            </ul>
+        </div>
+    </div>
+    
+   
+    
+  
+</div>

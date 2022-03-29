@@ -1,0 +1,29 @@
+@import '../app.component.scss';
+
+.row{
+    background-color: $color-gris;
+}
+
+.zonalogo{
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    margin-left: 15px;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    height:40px;
+    width: 114px;
+}
+
+.idioma{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right: 15px;
+}
+
+#dropdownIdioma{
+    background-color: $color-gris;
+}

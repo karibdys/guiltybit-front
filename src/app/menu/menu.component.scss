@@ -1,13 +1,70 @@
 @import '../app.component.scss';
 
-nav {
-    padding: 1em;
-    background-color: $color-secundario;
+nav {    
     display: flex;
     justify-content: space-between;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*barra superior del menú (opciones)*/
+.menu-superior {
+    float: left;
+}
+  
+.menu-superior> a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    width: 150px;
+    text-decoration: none;
+}
+  
+.menu-superior> a:hover {
+    color:$color-secundario;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .search{
     display: flex;
     gap: 1em;
+}
+
+/*barra inferior del menú (destacador)*/
+.double-line{
+    display: none;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;    
+    max-height: 8px;
+}
+
+.menu-inferior {
+    float: left;
+}
+  
+.menu-inferior> a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 3px 16px;
+    width: 100px;
+    margin-left: 25px;
+    margin-right: 25px;
+    text-decoration: none;
+}
+  
+.active {
+    background-color:$color-secundario;
+}
+
+@media (min-width: 990px) {
+    .double-line{
+        display: flex;
+    }
 }

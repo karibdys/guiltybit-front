@@ -1,20 +1,30 @@
 <div class="row">
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-    
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li *ngFor="let opcion of menuOpciones">
-                <a class="nav-link" href="#">{{opcion}} </a>
+    <nav>
+        <div class="menu-izquierda">
+            <ul>
+                <li *ngFor="let opcion of menuOpciones" class="menu-superior">
+                    <a class="nav-link elemnom-menu" (click)="changeSection(opcion)">{{opcion.nom}} </a>
+                </li>              
+            </ul>      
+        </div>
+        <div class="menu-derecha">
+            <form class="form-inline my-2 my-lg-0 search">
+                <input class="form-control mr-sm-2" type="search" [placeholder]="traduc.general.buscador" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">{{traduc.general.buscador}}</button>
+            </form>
+        </div>
+    </nav>
+</div>
+
+<div class="row double-line">
+    <div class="menu-izquierda">
+        <ul>
+            <li *ngFor="let opcion of menuOpciones" class="menu-inferior">
+                <a [class]="(opcion.selected) ? 'active':'noactive'"> </a>
             </li>              
         </ul>      
-        </div>
-        <form class="form-inline my-2 my-lg-0 search">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </nav>
+    </div>
+    <div class="menu-derecha">
+
+    </div>  
 </div>

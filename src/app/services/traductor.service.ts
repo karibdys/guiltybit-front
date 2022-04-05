@@ -22,7 +22,6 @@ export class TraductorService {
   }
 
   private idioma$ = new Subject<string>();
-  public nuevoidioma : Observable<string>;
 
   constructor() {
     this.idiomasDisponibles= [
@@ -30,10 +29,12 @@ export class TraductorService {
       'CA',
       'EN'
     ];
-
-    this.nuevoidioma = of('ES', 'CA', 'EN');
-    this.setIdioma(this.idiomasDisponibles[0]);
-
+    if (localStorage.getItem("idioma")){
+      let idioma = localStorage.getItem('idioma');  
+      this.setIdioma(idioma!);
+    }else{
+      this.setIdioma('ES');
+    }
   }
 
 
@@ -50,6 +51,7 @@ export class TraductorService {
   
   //establece el idioma de la web entre los disponibles. Si el idioma indicado no está disponible, pone el español por defecto
   setIdioma(idioma: string){
+    localStorage.setItem("idioma", idioma);
     switch(idioma.toUpperCase()){
       case 'ES':
         this.idioma='ES';
@@ -82,6 +84,7 @@ export class TraductorService {
                         TRADUCTOR
    *********************************************************/
   setES(){
+    localStorage.setItem("idioma", "ES");
     this.textos.general.buscador="Buscador";
 
     this.textos.menu.inicio="Inicio";
@@ -92,6 +95,7 @@ export class TraductorService {
   }
 
   setCA(){
+    localStorage.setItem("idioma", "CA");
     this.textos.general.buscador="Cercador";
 
     this.textos.menu.inicio="Inici";
@@ -102,6 +106,7 @@ export class TraductorService {
   }
 
   setEN(){
+    localStorage.setItem("idioma", "EN");
     this.textos.general.buscador="Search";
 
     this.textos.menu.inicio="Home";

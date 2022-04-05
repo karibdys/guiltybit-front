@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TraductorService } from './services/traductor.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'guiltybit-front';
+
+  constructor(
+    private tService: TraductorService
+  ){}
+
+  ngOnInit(){
+    
+  }
 }

@@ -28,7 +28,7 @@ export class HeaderComponent implements OnInit {
     });
     
     this.idiomas = tService.getIdiomasDisponibles();    
-    tService.setIdioma(this.idiomas[0]);   
+    
     
    }
 
@@ -38,6 +38,7 @@ export class HeaderComponent implements OnInit {
   }
 
   cambiarIdioma(value: string){   
+    console.log("llamado cambiarIdioma header");
     this.tService.setIdioma(value);
   }
 

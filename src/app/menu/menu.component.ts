@@ -47,14 +47,9 @@ export class MenuComponent implements OnInit {
             selected: false  
           }
         ];
-        console.log(this.menuOpciones);
-    });
-    
+    });    
     this.idiomas = tService.getIdiomasDisponibles();    
-    tService.setIdioma(this.idiomas[0]);   
-    
-   
-      
+    tService.setIdioma(tService.getIdioma());       
   }  
 
   ngOnInit(): void {
